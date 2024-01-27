@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import userRoutes from "./routes/user.route.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -16,3 +17,6 @@ const app = express();
 app.listen(process.env.PORT,()=>{
     console.log("Connected to port " + process.env.PORT);
 } )
+
+app.use("/api/user", userRoutes);
+
